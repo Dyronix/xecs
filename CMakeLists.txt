@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 
-SET(PROJECT_NAME "demo")
+SET(PROJECT_NAME "xecs")
 SET(PROJECT_NAME_UPPER "")
 SET(PROJECT_NAME_LOWER "")
 
@@ -10,6 +10,8 @@ string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 project(${PROJECT_NAME})
 
 message(STATUS "Start generation of project with name: ${PROJECT_NAME}")
+
+option(BUILD_SHARED_LIBS "Build xecs as shared libraries" OFF)
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     add_definitions(-D${PROJECT_NAME_UPPER}_PLATFORM_X64)
