@@ -1,8 +1,8 @@
 #pragma once
 
+#include "xsparse/xsparse_map.h"
 #include "xsparse/xsparse_set.h"
 
-#include <unordered_map>
 #include <atomic>
 #include <memory>
 
@@ -79,24 +79,24 @@ namespace xecs
         template <typename TComponentType>
         const TComponentType* get_component(const entity &entity) const
         {
-            const auto& pool = get_or_create_pool<TComponentType>();
+            const auto* pool = get_pool<TComponentType>();
 
-            if (!pool.entities.contains(get_entity_id(entity)))
+            if (!pool || !pool->entities.contains(get_entity_id(entity)))
             {
                 return nullptr;
             }
 
-            const size_t index = pool.entities.data()[get_entity_id(entity)];
-            return &pool.components[index];
+            const size_t index = pool->entities.data()[get_entity_id(entity)];
+            return &pool->components[index];
         }
 
         //--------------------------------------------------------------
         template <typename TComponentType>
         bool has_component(const entity &entity) const
         {
-            const auto& pool = get_or_create_pool<TComponentType>();
+            const auto* pool = get_pool<TComponentType>();
 
-            return pool.entities.contains(get_entity_id(entity));
+            return pool && pool->entities.contains(get_entity_id(entity));
         }
 
     private:
@@ -129,7 +129,16 @@ namespace xecs
             return *static_cast<pool<T> *>(slot.get());
         }
 
+        //--------------------------------------------------------------
+        template <typename T>
+        const pool<T>* get_pool() const
+        {
+            const size_t id = get_component_id<T>();
+            const auto* slot = m_component_pools.find(id);
+            return slot ? static_cast<const pool<T>*>(slot->get()) : nullptr;
+        }
+
     private:
-        std::unordered_map<size_t, std::unique_ptr<ipool>> m_component_pools;
+        sparse_map<size_t, std::unique_ptr<ipool>> m_component_pools;
     };
 }

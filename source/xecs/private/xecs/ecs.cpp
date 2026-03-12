@@ -3,18 +3,6 @@
 namespace xecs
 {
     //--------------------------------------------------------------
-    world* ecs_world_create()
-    {
-        return new world();
-    }
-
-    //--------------------------------------------------------------
-    void ecs_world_destroy(world* world)
-    {
-        delete world;
-    }
-
-    //--------------------------------------------------------------
     size_t ecs_world_create_entity(world* world)
     {
         return world != nullptr ? world->create_entity() : 0;
