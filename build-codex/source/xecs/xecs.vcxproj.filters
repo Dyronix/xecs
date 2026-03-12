@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\private\xecs\ecs.cpp">
+      <Filter>private\xecs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xsparse\xsparse_set.h">
+      <Filter>public\xsparse</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xsparse\xsparse_map.h">
+      <Filter>public\xsparse</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xecs\ecs_world.h">
+      <Filter>public\xecs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xecs\ecs_entity.h">
+      <Filter>public\xecs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xecs\ecs_system.h">
+      <Filter>public\xecs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\public\xecs\ecs.h">
+      <Filter>public\xecs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\daved\source\repos\dsquad\xecs\source\xecs\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="private">
+      <UniqueIdentifier>{E7D5DD24-E883-3986-9452-07CC153539F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\xecs">
+      <UniqueIdentifier>{8F46698F-38BA-3410-BB24-8B6ACF08F3F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{7FABC3B9-5D50-3EC2-9824-85DC763146BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\xecs">
+      <UniqueIdentifier>{09CB6C22-F722-3764-A046-F589A864F337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\xsparse">
+      <UniqueIdentifier>{E93263B8-1E4A-374D-9235-4078A3CF013D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

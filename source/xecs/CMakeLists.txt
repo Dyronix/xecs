@@ -25,8 +25,6 @@ endif()
 ## private sources
 target_sources(${PROJECT_NAME_LOWER} PRIVATE 
     ### xecs
-    ${CMAKE_CURRENT_LIST_DIR}/private/xecs/ecs_world.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/private/xecs/ecs_entity.cpp
     ${CMAKE_CURRENT_LIST_DIR}/private/xecs/ecs.cpp)
 
 ## public sources
@@ -37,6 +35,7 @@ target_sources(${PROJECT_NAME_LOWER} PUBLIC
     ### xecs
     ${CMAKE_CURRENT_LIST_DIR}/public/xecs/ecs_world.h
     ${CMAKE_CURRENT_LIST_DIR}/public/xecs/ecs_entity.h
+    ${CMAKE_CURRENT_LIST_DIR}/public/xecs/ecs_system.h
     ${CMAKE_CURRENT_LIST_DIR}/public/xecs/ecs.h)
 
 # Create the project filters

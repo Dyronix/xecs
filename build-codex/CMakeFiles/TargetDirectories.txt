@@ -1,0 +1,3 @@
+C:/Users/daved/source/repos/dsquad/xecs/build-codex/CMakeFiles/ALL_BUILD.dir
+C:/Users/daved/source/repos/dsquad/xecs/build-codex/CMakeFiles/ZERO_CHECK.dir
+C:/Users/daved/source/repos/dsquad/xecs/build-codex/source/xecs/CMakeFiles/xecs.dir

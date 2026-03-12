@@ -141,6 +141,27 @@ public:
         return true;
     }
 
+    /// @brief Returns dense index for a value, or invalid_index when missing.
+    /// @param value Value to resolve.
+    /// @return Dense index when present; otherwise invalid_index.
+    size_type index_of(value_type value) const
+    {
+        const size_type index = static_cast<size_type>(value);
+
+        if (index >= m_sparse.size())
+        {
+            return invalid_index;
+        }
+
+        const size_type dense_index = m_sparse[index];
+        if (dense_index == invalid_index || dense_index >= m_dense.size() || m_dense[dense_index] != value)
+        {
+            return invalid_index;
+        }
+
+        return dense_index;
+    }
+
     /// @brief Returns read-only pointer to dense storage.
     /// @return Pointer to first dense element, or nullptr when empty.
     const value_type* data() const

@@ -1,0 +1,10 @@
+^C:\USERS\DAVED\SOURCE\REPOS\DSQUAD\XECS\SOURCE\XECS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/daved/source/repos/dsquad/xecs -BC:/Users/daved/source/repos/dsquad/xecs/build-codex --check-stamp-file C:/Users/daved/source/repos/dsquad/xecs/build-codex/source/xecs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
